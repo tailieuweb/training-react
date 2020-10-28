@@ -10,14 +10,14 @@
 git clone https://github.com/tailieuweb/training-react.git
 ```
 
-## Swith Branch
-```
-git checkout GroupE
-```
-
 ## Go in Folder Project
 ```
 cd %Folder Name%
+```
+
+## Swith Branch
+```
+git checkout GroupE
 ```
 
 ## Install
