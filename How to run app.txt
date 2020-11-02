@@ -1,5 +1,5 @@
 npm install
 
-npm react-scripts build
+npm run-script build (npm run build)
 
 npm start
