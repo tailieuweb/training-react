@@ -1,8 +1,13 @@
 # training-react
+
 ## Using React
 
 ### _Author: Lê Thành Hưng
 
+## Download
+
+```
+git clone https://github.com/tailieuweb/training-react.git
 ```
 
 ## Go in Folder Project
