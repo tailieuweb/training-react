@@ -1,0 +1,5 @@
+@mixin font($fontSize, $center, $lineHeight) {
+  line-height: $lineHeight;
+  text-align: $center;
+  font-size: $fontSize;
+}

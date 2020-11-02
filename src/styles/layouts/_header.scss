@@ -1,0 +1,10 @@
+.header-container {
+  background-color: $background-primary;
+  color: $color-primary;
+  padding: 10px 15px;
+  margin: 0;
+  .header-title {
+    @include font($fontSize-title,center,1.447em);
+  }
+}
+
