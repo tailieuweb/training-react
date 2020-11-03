@@ -8,8 +8,6 @@ import Mockdata from './mockdata/Mockdata';
 import Item from './components/Item'; 
 import ItemEdit from './components/ItemEdit';
 import 'sweetalert/dist/sweetalert.css';
-import axios from 'axios';
-import ReactPaginate from 'react-paginate';
 
 
 let arrayLevel = [];
@@ -29,49 +27,33 @@ class App extends Component {
       titleAlert: '',
       idAlert: '',
       indexEdit: 0,
-      offset: 0,
       idEdit: '',
       nameEdit: '',
       levelEdit: 0,
       arrayLevel: arrayLevel,
       showForm: false,
-      orgtableData: [],
       valueItem: '',
       levelItem: 0,
       sortType: '',
       sortOrder: '',
       valueSearch: '',
-      tableData: [],
-      perPage: 3,
-      currentPage: 0,
       isSearch: false,
-      itemsSearch: []
+      itemsSearch: [],
+      currentPage: 1,
+      newsPerPage: 3
     }
-    this.handlePageClick = this.handlePageClick.bind(this);
   }
-  handlePageClick = (e) => {
-        const selectedPage = e.selected;
-        const offset = selectedPage * this.state.perPage;
-
-        this.setState({
-            currentPage: selectedPage,
-            offset: offset
-        }, () => {
-            this.loadMoreData()
-        });
-
-    };
-
-    loadMoreData() {
-    const data = this.state.orgtableData;
-    
-    const slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
+  chosePage = (event) => {
     this.setState({
-      pageCount: Math.ceil(data.length / this.state.perPage),
-      items:slice
-    })
+      currentPage: Number(event.target.id)
+    });
+  }
   
-    }
+  select = (event) => {
+    this.setState({
+      newsPerPage: event.target.value
+    })
+  }
   handleShowAlert = (item) => {
     this.setState({
       showAlert: true,
@@ -120,6 +102,7 @@ class App extends Component {
     });
   }
   handleEditClickSubmit = () => {
+
     let {items, idEdit, nameEdit, levelEdit} = this.state; 
     if(items.length > 0) { 
       for(let i = 0; i < items.length; i++) {
@@ -172,6 +155,7 @@ class App extends Component {
       isSearch: false,
       valueSearch: ''
     });
+    console.log(this.state.items);
   }
   handleSort = (sortType,sortOrder) => {
     let {items} = this.state;
@@ -238,23 +222,8 @@ class App extends Component {
       valueSearch: search
     });
   } 
-  componentDidMount(){
-        this.getData();
-    }
-
-    getData() {
-                var data = this.state.items;
-        
-                var slice = data.slice(this.state.offset, this.state.offset + this.state.perPage)
-                
-
-                this.setState({
-                    pageCount: Math.ceil(data.length / this.state.perPage),
-                    orgtableData :this.state.items,
-                    items:slice
-                })
-    }
   renderItem = () => {
+    
     let {items, idEdit, indexEdit, nameEdit, levelEdit, arrayLevel, isSearch, itemsSearch} = this.state;
     if (isSearch) {
       items = itemsSearch
@@ -263,10 +232,16 @@ class App extends Component {
     if(items.length === 0) {
       return <Item item={0} />
     }
-    return items.map((item, index) => {
+    const currentPage = this.state.currentPage;
+    const newsPerPage = this.state.newsPerPage;
+    const indexOfLastNews = currentPage * newsPerPage;
+    const indexOfFirstNews = indexOfLastNews - newsPerPage;
+    const currentTodos = items.slice(indexOfFirstNews, indexOfLastNews);
+    return currentTodos.map((item, index) => {
       if(item.id === idEdit) {
         return (
           <ItemEdit 
+            
             key={index}
             indexEdit={indexEdit}
             nameEdit={nameEdit}
@@ -281,6 +256,7 @@ class App extends Component {
       }
       return (
         <Item 
+          stt={index + 1 + (currentPage - 1)*newsPerPage} key={index} data={item}
           index={index+1} 
           item={item} 
           key={item.id} 
@@ -291,6 +267,11 @@ class App extends Component {
     });
   }
   render() {
+    const newsPerPage = this.state.newsPerPage;
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(this.state.items.length / newsPerPage); i++) {
+      pageNumbers.push(i);
+    }
     return (
       <div className="container">
         <SweetAlert
@@ -359,18 +340,36 @@ class App extends Component {
               {this.renderItem()}
             </tbody>
           </table>
-          <ReactPaginate
-                    previousLabel={"prev"}
-                    nextLabel={"next"}
-                    breakLabel={"..."}
-                    breakClassName={"break-me"}
-                    pageCount={this.state.pageCount}
-                    marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
-                    onPageChange={this.handlePageClick}
-                    containerClassName={"pagination"}
-                    subContainerClassName={"pages pagination"}
-                    activeClassName={"active"}/>
+          <div className="news-per-page">
+          <select defaultValue="0" onChange={this.select} >
+            <option value="0" disabled>Get by</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+          </select>
+        </div>
+        <div className="pagination-custom">
+          <ul id="page-numbers">
+            {
+              pageNumbers.map(number => {
+                if (this.state.currentPage === number) {
+                  return (
+                    <li key={number} id={number} className="active">
+                      {number}
+                    </li>
+                  )
+                }
+                else {
+                  return (
+                    <li key={number} id={number} onClick={this.chosePage} >
+                      {number}
+                    </li>
+                  )
+                }
+              })
+            }
+          </ul>
+        </div>
         </div>
       </div>
     );
