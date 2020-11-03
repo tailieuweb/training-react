@@ -1,0 +1,42 @@
+.taskdetail{
+    margin-top: 20px;
+}
+.title-detailTask{
+    width: 100%;
+    height: 50px;
+}
+.card-custom{
+    margin: 0;
+    padding: 0;
+}
+.card-bodyDetail{
+    padding-top: 20px;
+}
+.detailNameTask{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 0;
+    position: relative;
+    .btnback{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .Adddetailinput{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+.detailStep{
+    border-top: 2px solid gray; 
+    border-left: 2px solid gray;
+    padding-left: 0;
+}
+.nameStep{
+    text-align: left;
+    padding-left: 10px;
+}

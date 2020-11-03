@@ -1,0 +1,109 @@
+.content{
+    margin: 20px 0;
+}
+.btnAction:nth-child(2){
+    margin: 0 5px;
+}
+.imageTask{
+    width: 50px;
+}
+.modalAdd,.modalConfirmDelete{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .overlay,.overlayConfirm{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+   .modalAddMain{
+       position: relative;
+       width: 500px;
+       background-color: white;
+       margin: 0 auto;
+       z-index: 1;
+       border-radius: 10px;
+       margin-top: 30px;
+       padding: 20px;
+   }
+}
+.AddshowImage{
+    width: 50px;
+    height: 50px;
+}
+.hoanthanh,.chuahoanthanh{
+    padding: 3px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+}
+.hoanthanh{
+    background-color: green;
+    display: inline-block;
+    width: 125px;
+}
+.chuahoanthanh{
+    background-color: red;
+}
+.boxPanigination{
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    .paniginationItem{
+        display: inline;
+        background-color: var(--color-primary);
+        color: white;
+        padding: 3px 8px;
+        margin: 0 3px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+}
+#nameTaskItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    #iconNameTask{
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-left: 10px;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+#closeSearchType{
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: red;
+    color: white;  
+    margin: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.modalConfirmDelete{
+    .modalConfirmMain{
+        width: 500px;
+        background-color: white;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+        margin: 0 auto;
+        margin-top: 30px;
+        .boxButtonConfirm{
+            .btnConfirm{
+                width: 100px;
+                margin-right: 5px;
+            }
+        }
+    }
+}
