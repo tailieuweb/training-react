@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 class Home extends Component {
     render() {
         return (
-            <div>
+            <>
                 <ul className="hb-dropdown">
                     <li><Link to="/bai1">Bai 1-Props</Link></li>
                     <li><Link to="/bai2">Bai 2-State</Link></li>
@@ -14,10 +14,9 @@ class Home extends Component {
                     <li><Link to="/bai7">Bai 7-Lifting State Up</Link></li>
                     <li><Link to="/bai8">Bai 8- Conditional Rendering</Link></li>
                     <li><Link to="/bai9">Bai 9-Lists and Keys</Link></li>
-                   
                 </ul>
                 <h2>10 For example</h2>
-            </div>
+            </>
         );
     }
 }

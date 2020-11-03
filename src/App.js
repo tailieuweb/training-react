@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import SweetAlert from 'sweetalert-react';
-import { BrowserRouter as Router } from "react-router-dom";
-import axios, { post } from 'axios';
+import { BrowserRouter as Router, Link } from "react-router-dom";
+// import React, { useState } from "react";
 import ReactPaginate from 'react-paginate';
 import Search from './components/Search';
 import Sort from './components/Sort';
@@ -11,8 +11,8 @@ import Mockdata from './mockdata/Mockdata';
 import Item from './components/Item';
 import ItemEdit from './components/ItemEdit';
 import 'sweetalert/dist/sweetalert.css';
-import Home from './components/Home/Home';
 import RouterURL from './components/Router/RouterURL';
+import './css/app.scss';
 
 
 
@@ -23,6 +23,20 @@ for (let i = 0; i < Mockdata.length; i++) {
   }
 }
 arrayLevel.sort(function (a, b) { return a - b });
+const convertBase64 = (file) => {
+  return new Promise((resolve, reject) => {
+    const fileReader = new FileReader();
+    fileReader.readAsDataURL(file);
+
+    fileReader.onload = () => {
+      resolve(fileReader.result);
+    };
+
+    fileReader.onerror = (error) => {
+      reject(error);
+    };
+  });
+};
 
 class App extends Component {
   constructor(props) {
@@ -55,10 +69,9 @@ class App extends Component {
       curentPage: 0,
       offset: 0
     };
-    // this.onFormSubmit = this.onFormSubmit.bind(this)
-    // this.onChange = this.onChange.bind(this)
-    // this.fileUpload = this.fileUpload.bind(this)
+
   }
+
   handleShowAlert = (item) => {
     this.setState({
       showAlert: true,
@@ -108,14 +121,9 @@ class App extends Component {
       deadLine: value
     });
   }
-  handleEditInputimgEdit = (value) => {
+  handleEditInputimgEdit = async (value) => {
     this.setState({
-      imgEdit: value
-    });
-  }
-  handleFormInputImage = (value) => {
-    this.setState({
-      imgEdit: value
+      imgEdit: await convertBase64(value.target.files[0])
     });
   }
   handleEditSelectChange = (value) => {
@@ -156,13 +164,10 @@ class App extends Component {
     });
   }
 
-  handleFormInputImage = (value) => {
+  handleFormInputImage = async (value) => {
     this.setState({
-      valueFile: value
+      valueFile: await convertBase64(value.target.files[0])
     });
-  }
-  handleFormInputfile(event) {
-    this.setState({ valueFile: event.target.files[0] })
   }
   handleFormSelectChange = (value) => {
     this.setState({
@@ -179,12 +184,9 @@ class App extends Component {
   }
 
   handleFormClickSubmit = (event) => {
-    // event.preventDefault() // Stop form submit
-    // this.fileUpload(this.state.valueFile).then((response) => {
-    //   console.log(response.data);
-    // })
+
     let { valueItem, valueDeadline, valueFile, levelItem, items } = this.state;
-    if (valueItem.trim() === 0 || valueDeadline.trim() === 0 || valueFile.trim() === 0) return false;
+    if (valueItem.trim() === 0 || valueDeadline.trim() === 0) return false;
     let newItem = {
       id: uuidv4(),
       name: valueItem,
@@ -342,7 +344,6 @@ class App extends Component {
             handleEditInputChange={this.handleEditInputChange}
             handleEditInputDeadline={this.handleEditInputDeadline}
             handleEditInputimgEdit={this.handleEditInputimgEdit}
-            handleFormInputImage={this.handleFormInputImage}
             handleEditSelectChange={this.handleEditSelectChange}
             handleEditClickSubmit={this.handleEditClickSubmit}
           />
@@ -359,17 +360,9 @@ class App extends Component {
       )
     });
   }
-  // fileUpload(valueFile) {
-  //   const url = 'http://localhost:3000/assets';
-  //   const formData = new FormData();
-  //   formData.append('file', valueFile)
-  //   const config = {
-  //     headers: {
-  //       'content-type': 'multipart/form-data'
-  //     }
-  //   }
-  //   return post(url, formData, config)
-  // }
+
+
+
   render() {
 
     return (
@@ -377,7 +370,7 @@ class App extends Component {
         <div className="App">
           <header className="App1">
             <ul className="hb-dropdown">
-              <Home></Home>
+              {/* <Home></Home> */}
               <RouterURL></RouterURL>
             </ul>
           </header>
@@ -393,23 +386,20 @@ class App extends Component {
               onConfirm={() => this.handleDeleteItem()}
             />
             <div className="page-header">
-              <h1>Demo - Project Công Việc <small>ReactJS</small></h1>
+              <h1><Link to="/">Demo - Project Công Việc</Link> <small>ReactJS</small> <Link className="example" to="/example">Example</Link></h1>
+              
             </div>
             <div className="row">
-              <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+              <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4 pd-0">
                 <Search
                   valueSearch={this.state.valueSearch}
                   handleSearch={this.handleSearch}
                 />
               </div>
               <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-                <Sort
-                  sortType={this.state.sortType}
-                  sortOrder={this.state.sortOrder}
-                  handleSort={this.handleSort}
-                />
+                
               </div>
-              <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+              <div className="col-xs-5 col-sm-5 col-md-5 col-lg-5 pd-0">
                 <button
                   type="button"
                   className="btn btn-info btn-block marginB10"
@@ -420,7 +410,7 @@ class App extends Component {
               </div>
             </div>
             <div className="row marginB10">
-              <div className="col-md-offset-7 col-md-5">
+              <div className="col-md-offset-7 col-md-5 pd-0">
                 <Form
                   showForm={this.state.showForm}
                   arrayLevel={this.state.arrayLevel}
@@ -436,7 +426,14 @@ class App extends Component {
               </div>
             </div>
             <div className="panel panel-success">
-              <div className="panel-heading">List Item</div>
+              <div className="panel-heading">
+                <Sort
+                    sortType={this.state.sortType}
+                    sortOrder={this.state.sortOrder}
+                    handleSort={this.handleSort}
+                  />
+                <h2>List item</h2>
+              </div>
               <table className="table table-hover ">
                 <thead>
                   <tr>
@@ -470,7 +467,10 @@ class App extends Component {
             activeClassName="active"
           />
         </div>
+        {/* <h4>Lưu ý các demo liên quan:http://localhost:3000/bai + n</h4>
+        <h4>n=1~9</h4> */}
       </Router>
+
     );
   }
 }

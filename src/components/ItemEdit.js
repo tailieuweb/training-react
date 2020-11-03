@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class ItemEdit extends Component {
   renderLevel = () => {
-    let {arrayLevel} = this.props;
-    return arrayLevel.map((level,index)=>{
+    let { arrayLevel } = this.props;
+    return arrayLevel.map((level, index) => {
       switch (level) {
         case 0:
           return <option key={index} value={level}>Low</option>
@@ -15,55 +15,55 @@ class ItemEdit extends Component {
     });
   }
   render() {
-    return(
+    return (
       <tr>
         <td className="text-center">{this.props.indexEdit}</td>
         <td>
-          <input 
-            type="text" 
-            className="form-control" 
-            value={this.props.nameEdit}  
+          <input
+            type="text"
+            className="form-control"
+            value={this.props.nameEdit}
             onChange={(event) => this.props.handleEditInputChange(event.target.value)}
           />
         </td>
         <td>
-          <input 
-            type="text" 
-            className="form-control" 
-            value={this.props.deadLine}  
+          <input
+            type="text"
+            className="form-control"
+            value={this.props.deadLine}
             onChange={(event) => this.props.handleEditInputDeadline(event.target.value)}
           />
         </td>
         <td>
-          <input 
-            type="text" 
-            className="form-control" 
-            value={this.props.imgEdit}  
-            onChange={(event) => this.props.handleEditInputimgEdit(event.target.value)}
+          <input
+            type="file"
+            className="form-control"
+            value={this.props.imgEdit}
+            onChange={(event) => this.props.handleEditInputimgEdit(event)}
           />
         </td>
-        
+
         <td className="text-center">
-          <select 
+          <select
             className="form-control"
             value={this.props.levelEdit}
-            onChange={(event) => this.props.handleEditSelectChange(event.target.value)} 
+            onChange={(event) => this.props.handleEditSelectChange(event.target.value)}
           >
             {this.renderLevel()}
           </select>
         </td>
         <td>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="btn btn-default btn-sm marginR5"
-            onClick={()=>this.props.handleEditClickCancel()}
+            onClick={() => this.props.handleEditClickCancel()}
           >
             Cancel
           </button>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="btn btn-success btn-sm"
-            onClick={()=>this.props.handleEditClickSubmit()}
+            onClick={() => this.props.handleEditClickSubmit()}
           >
             Save
           </button>

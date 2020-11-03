@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-  
   renderLevel = () => {
     let { arrayLevel } = this.props;
     return arrayLevel.map((level, index) => {
@@ -15,11 +14,12 @@ class Form extends Component {
       }
     });
   }
+
   render() {
-    
+
     if (this.props.showForm === false) return null;
     return (
-      <form className="form-inline" enctype='multipart/form-data' onSubmit={(event) => this.props.handleFormClickSubmit(event)}>
+      <form className="form-add" enctype='multipart/form-data' onSubmit={(event) => this.props.handleFormClickSubmit(event)}>
         <div className="form-group marginR5">
           <input
             type="text"
@@ -41,17 +41,12 @@ class Form extends Component {
         </div>
         <div className="form-group marginR5">
           <input
-            type="text"
+            type="file"
             className="form-control"
             placeholder="Item img"
-            value={this.props.valueFile}
-            onChange={(event) => this.props.handleFormInputImage(event.target.value)}
+            value={this.valueFile}
+            onChange={(event) => this.props.handleFormInputImage(event)}
           />
-           <label>
-          <input type="file" 
-           onChange={(e)=>this._handleImageChange(e)}
-          />
-        </label>
         </div>
         <div className="form-group marginR5">
           <select
@@ -64,7 +59,7 @@ class Form extends Component {
         </div>
         <button
           type="button"
-          className="btn btn-default marginR5"
+          className="btn btn-cancel btn-default marginR5 mr-4"
           onClick={() => this.props.handleFormClickCancel()}
         >
           Cancel
