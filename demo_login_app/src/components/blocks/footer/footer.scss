@@ -1,0 +1,35 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    background: #01060a;
+    color: #ffffff;
+    .container {
+        max-width: 1500px !important;
+        padding: 20px;
+
+        .footer-right {
+            b {
+                font-size: 2em;
+            }
+        }
+
+        .footer-left {
+           
+            span {
+                color: #abb7c4;
+            }
+
+        }
+
+    }
+
+    .footer-forallcopy {
+        padding: 15px;
+        background: #0b0e1f;
+        text-align: center;
+    }
+
+}

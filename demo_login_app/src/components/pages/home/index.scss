@@ -1,0 +1,131 @@
+$color_write:  #fff;
+.male_product_all {
+    background-color: #202A33;
+    padding-bottom: 30px;
+    ;
+
+    .header_namePage_male {
+        padding-top: 20px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        span {
+            color: $color_write;
+        }
+    }
+
+    .infomation_male {
+        font-family: "roboto";
+
+        h5 {
+            font-size: 15px;
+        }
+    }
+
+    .infomation_male :hover {
+        font-family: "roboto";
+
+        h5 {
+            font-size: 16px;
+        }
+    }
+
+    .row {
+        background: #151D25;
+        border-radius: 5px;
+
+        .col-md-3 {
+            padding: unset !important;
+
+            .product {
+                background-color: #172531;
+                margin: 7px;
+                padding: 9px;
+                border-radius: 5px;
+
+                .img-product {
+                    position: relative;
+                    text-align: center;
+                    overflow: hidden;
+
+                    .img-product-1 {}
+
+                    .img-product-2 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 1;
+                        transition: opacity .5s;
+                    }
+
+                    .btn-xem {
+                        position: absolute;
+                        left: 0;
+                        width: 100%;
+                        bottom: -40px;
+                        padding: 5px 0;
+                        text-decoration: none;
+                        background-color: #404040;
+                        margin: 0 auto;
+                        color: $color_write;
+                        transition: bottom .5s;
+
+                        &:hover {
+                            background-color: #3498db;
+                        }
+                    }
+
+                    .social {
+                        position: absolute;
+                        z-index: 1;
+                        right: 0;
+                        bottom: 80px;
+
+                        a {
+                            display: block;
+                            background-color: $color_write;
+                            border-radius: 50%;
+                            padding: 8px 9.5px;
+                            text-decoration: none;
+                            margin-bottom: 8px;
+                            transition: background-color .5s;
+
+                            &:hover {
+                                background-color: #007bff;
+                            }
+                        }
+
+                        .qick-view-social,
+                        .cart-social,
+                        .wishlist-social {
+                            transform: translateX(50px);
+                            transition: all 0.4s;
+                        }
+                        .wishlist-social {
+                            transition-delay: .3s;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .img-product-2 {
+                        opacity: 0;
+                    }
+
+                    .btn-xem {
+                        bottom: 0;
+                    }
+
+                    .social {
+
+                        .qick-view-social,
+                        .cart-social,
+                        .wishlist-social {
+                            transform: translateX(0);
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
