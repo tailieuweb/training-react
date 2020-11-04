@@ -23,18 +23,16 @@
     margin-top: 30px;
   }
 
-  .toListItem {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    cursor: pointer;
-  }
   .fa-user-circle-o {
     font-size: 70px;
     position: absolute;
     right: 40px;
     top: 10px;
+  }
+}
+.d-flex {
+  margin-bottom: 10px;
+  .fa {
+    font-size: 30px;
   }
 }
