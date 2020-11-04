@@ -70,7 +70,7 @@ export default class App extends React.Component {
       arr: [],
       lat: 0,
       lon: 0,
-      cityname:''
+      cityname: "",
     };
   }
 
@@ -81,116 +81,125 @@ export default class App extends React.Component {
   };
 
   componentDidMount() {
-    const currentTime = new Date().getTime();
-    const storageTime = sessionStorage.getItem('time');
-    console.log(currentTime - storageTime);
-   
-    if(localStorage.length == 0 || storageTime && currentTime - storageTime > 100000){
-      if(storageTime && currentTime - storageTime > 100000){
-        localStorage.clear();
-        // sessionStorage.clear();
-      }
-      list_city.forEach((item) => {
-      const weather = `https://api.openweathermap.org/data/2.5/weather?q=${item.name}&APPID=${APIkey}`;
-      Promise.all([fetch(weather)])
-        .then(([res1]) => {
-          if (res1.ok) {
-            return Promise.all([res1.json()]);
-          }
-          throw Error(res1.statusText);
-        })
-        .then(([data1]) => {
-          const currentDate = new Date();
-          const date = `${
-            days[currentDate.getDay()]
-          }, Ngày ${currentDate.getDate()}, ${
-            months[currentDate.getMonth()]
-          }, Năm ${currentDate.getFullYear()}`;
-          const sunset = new Date(data1.sys.sunset * 1000)
-            .toLocaleTimeString()
-            .slice(0, 4);
-          const sunrise = new Date(data1.sys.sunrise * 1000)
-            .toLocaleTimeString()
-            .slice(0, 4);
-          const weatherInfo = {
-            city: data1.name,
-            lat: data1.coord.lat,
-            lon: data1.coord.lon,
-            country: data1.sys.country,
-            date,
-            description: data1.weather[0].description,
-            main: data1.weather[0].main,
-            temp: data1.main.temp,
-            highestTemp: data1.main.temp_max,
-            lowestTemp: data1.main.temp_min,
-            sunrise,
-            sunset,
-            clouds: data1.clouds.all,
-            humidity: data1.main.humidity,
-            wind: data1.wind.speed,
-          };
+    try {
+      if (typeof Storage !== "undefined") {
+        const currentTime = new Date().getTime();
+        const storageTime = sessionStorage.getItem("time");
+        console.log(storageTime);
+        console.log(currentTime - storageTime);
 
-          localStorage.setItem(data1.name,JSON.stringify(data1));
-          sessionStorage.setItem('time', currentTime);
-          this.setState((prevState) => ({
-            arr: [...prevState.arr, weatherInfo],
-            error: false,
-          }));
-        })
-        .catch((error) => {
-          this.setState({
-            weatherInfo: null,
+        if (
+          localStorage.length === 0 ||
+          (storageTime && currentTime - storageTime > 400000)
+        ) {
+          if (storageTime && currentTime - storageTime > 400000) {
+            localStorage.clear();
+          }
+          list_city.forEach((item) => {
+            const weather = `https://api.openweathermap.org/data/2.5/weather?q=${item.name}&APPID=${APIkey}`;
+            Promise.all([fetch(weather)])
+              .then(([res1]) => {
+                if (res1.ok) {
+                  return Promise.all([res1.json()]);
+                }
+                throw Error(res1.statusText);
+              })
+              .then(([data1]) => {
+                const currentDate = new Date();
+                const date = `${
+                  days[currentDate.getDay()]
+                }, Ngày ${currentDate.getDate()}, ${
+                  months[currentDate.getMonth()]
+                }, Năm ${currentDate.getFullYear()}`;
+                const sunset = new Date(data1.sys.sunset * 1000)
+                  .toLocaleTimeString()
+                  .slice(0, 4);
+                const sunrise = new Date(data1.sys.sunrise * 1000)
+                  .toLocaleTimeString()
+                  .slice(0, 4);
+                const weatherInfo = {
+                  city: data1.name,
+                  lat: data1.coord.lat,
+                  lon: data1.coord.lon,
+                  country: data1.sys.country,
+                  date,
+                  description: data1.weather[0].description,
+                  main: data1.weather[0].main,
+                  temp: data1.main.temp,
+                  highestTemp: data1.main.temp_max,
+                  lowestTemp: data1.main.temp_min,
+                  sunrise,
+                  sunset,
+                  clouds: data1.clouds.all,
+                  humidity: data1.main.humidity,
+                  wind: data1.wind.speed,
+                };
+
+                localStorage.setItem(data1.name, JSON.stringify(data1));
+                sessionStorage.setItem("time", currentTime);
+                this.setState((prevState) => ({
+                  arr: [...prevState.arr, weatherInfo],
+                  error: false,
+                }));
+              })
+              .catch((error) => {
+                this.setState({
+                  weatherInfo: null,
+                });
+              });
           });
-        });
-    });
-    }else{
-      try{
-        console.log(storageTime+", "+currentTime);
-      console.log("Have datas!");
-      const flag_city = localStorage.getItem('city');
-      for(let i=1; i < localStorage.length; i++){
-        const key = localStorage.key(i);
-        console.log(key); 
-        const data = localStorage.getItem(key);
-        const data1 = JSON.parse(data);
-        // console.log(JSON.parse(data));
-        const currentDate = new Date();
-          const date = `${
-            days[currentDate.getDay()]
-          }, Ngày ${currentDate.getDate()}, ${
-            months[currentDate.getMonth()]
-          }, Năm ${currentDate.getFullYear()}`;
-          const sunset = new Date(data1.sys.sunset * 1000)
-            .toLocaleTimeString()
-            .slice(0, 4);
-          const sunrise = new Date(data1.sys.sunrise * 1000)
-            .toLocaleTimeString()
-            .slice(0, 4);
-          const weatherInfo = {
-            city: data1.name,
-            lat: data1.coord.lat,
-            lon: data1.coord.lon,
-            country: data1.sys.country,
-            date,
-            description: data1.weather[0].description,
-            main: data1.weather[0].main,
-            temp: data1.main.temp,
-            highestTemp: data1.main.temp_max,
-            lowestTemp: data1.main.temp_min,
-            sunrise,
-            sunset,
-            clouds: data1.clouds.all,
-            humidity: data1.main.humidity,
-            wind: data1.wind.speed,
-          };
-          this.setState((prevState) => ({
-            arr: [...prevState.arr, weatherInfo],
-            error: false,
-          }));
+        } else {
+          try {
+            console.log(storageTime + ", " + currentTime);
+            for (let i = 1; i < localStorage.length; i++) {
+              const key = localStorage.key(i);
+              const data = localStorage.getItem(key);
+              const data1 = JSON.parse(data);
+              const currentDate = new Date();
+              const date = `${
+                days[currentDate.getDay()]
+              }, Ngày ${currentDate.getDate()}, ${
+                months[currentDate.getMonth()]
+              }, Năm ${currentDate.getFullYear()}`;
+              const sunset = new Date(data1.sys.sunset * 1000)
+                .toLocaleTimeString()
+                .slice(0, 4);
+              const sunrise = new Date(data1.sys.sunrise * 1000)
+                .toLocaleTimeString()
+                .slice(0, 4);
+              const weatherInfo = {
+                city: data1.name,
+                lat: data1.coord.lat,
+                lon: data1.coord.lon,
+                country: data1.sys.country,
+                date,
+                description: data1.weather[0].description,
+                main: data1.weather[0].main,
+                temp: data1.main.temp,
+                highestTemp: data1.main.temp_max,
+                lowestTemp: data1.main.temp_min,
+                sunrise,
+                sunset,
+                clouds: data1.clouds.all,
+                humidity: data1.main.humidity,
+                wind: data1.wind.speed,
+              };
+              this.setState((prevState) => ({
+                arr: [...prevState.arr, weatherInfo],
+                error: false,
+              }));
+            }
+          } catch (err) {
+            localStorage.clear();
+          }
         }
-      }catch(err){
-        localStorage.clear();
+      } else {
+        alert("Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!");
       }
+    } catch (err) {
+      this.setState({
+        error: true,
+      });
     }
   }
 
@@ -198,9 +207,6 @@ export default class App extends React.Component {
     if (e) e.preventDefault();
     const { value } = this.state;
     const weather = `https://api.openweathermap.org/data/2.5/weather?q=${value}&APPID=${APIkey}`;
-
-    //Save keyword search in localStorage
-    localStorage.setItem('city',value);
 
     Promise.all([fetch(weather)])
       .then(([res1]) => {
@@ -248,7 +254,7 @@ export default class App extends React.Component {
           }));
         }
         this.setState({
-          cityname:value,
+          cityname: value,
           weatherInfo,
           error: false,
         });
@@ -281,7 +287,6 @@ export default class App extends React.Component {
     let lonLocation = 0;
     latLocation = position.coords.latitude.toFixed(2) - 0.1;
     lonLocation = position.coords.longitude.toFixed(2) - 0.1;
-    console.log(latLocation + ", " + lonLocation);
     this.setState({
       lat: latLocation,
       lon: lonLocation,
@@ -290,7 +295,6 @@ export default class App extends React.Component {
 
   handleGetLocation() {
     let weatherInfo;
-    console.log(localStorage.length);
     //Get your location
     let error = () => {
       console.log("Error");
@@ -319,7 +323,6 @@ export default class App extends React.Component {
         const sunrise = new Date(data1.sys.sunrise * 1000)
           .toLocaleTimeString()
           .slice(0, 4);
-        console.log(data1);
         weatherInfo = {
           city: data1.name,
           country: data1.sys.country,

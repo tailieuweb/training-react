@@ -1,16 +1,4 @@
 const ListCity = [
-  // { name: "ha noi", text: "Hà Nội" },
-  // { name: "ho chi minh", text: "Hồ Chí Minh" },
-  // { name: "thanh hoa", text: "Thanh Hoá" },
-  // { name: "ca mau", text: "Cà Mau" },
-  // { name: "rach gia", text: "Rạch Giá" },
-  // { name: "hue", text: "Huế" },
-  // { name: "binh duong", text: "Bình Dương" },
-  // { name: "bien hoa", text: "Biên Hoà" },
-  // { name: "quang ngai", text: "Quảng Ngãi" },
-  // { name: "lao cai", text: "Lào Cai" },
-  // { name: "phu tho", text: "Phú Thọ" },
-  // { name: "bac lieu", text: "Bạc Liêu" },
   {
     id: 1559969,
     name: "Tỉnh Nghệ An",
@@ -82,26 +70,6 @@ const ListCity = [
     },
   },
   {
-    id: 1559978,
-    name: "Tỉnh Yên Bái",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 104.666672,
-      lat: 21.5,
-    },
-  },
-  {
-    id: 1560037,
-    name: "Yen Vinh",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.666672,
-      lat: 18.66667,
-    },
-  },
-  {
     id: 1560349,
     name: "Yen Bai",
     state: "",
@@ -109,26 +77,6 @@ const ListCity = [
     coord: {
       lon: 104.866669,
       lat: 21.700001,
-    },
-  },
-  {
-    id: 1560678,
-    name: "Xóm Yân Lạc Hâu",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.666672,
-      lat: 18.73333,
-    },
-  },
-  {
-    id: 1561096,
-    name: "Xóm Pho",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.849998,
-      lat: 21.033331,
     },
   },
   {
@@ -192,16 +140,6 @@ const ListCity = [
     },
   },
   {
-    id: 1562822,
-    name: "Socialist Republic of Vietnam",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.833328,
-      lat: 16.16667,
-    },
-  },
-  {
     id: 1563241,
     name: "Uong Bi",
     state: "",
@@ -209,16 +147,6 @@ const ListCity = [
     coord: {
       lon: 106.783333,
       lat: 21.033331,
-    },
-  },
-  {
-    id: 1563281,
-    name: "Tuy Hoa",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.300003,
-      lat: 13.08333,
     },
   },
   {
@@ -242,26 +170,6 @@ const ListCity = [
     },
   },
   {
-    id: 1564676,
-    name: "Tỉnh Tiền Giang",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.166672,
-      lat: 10.41667,
-    },
-  },
-  {
-    id: 1565022,
-    name: "Thu Dau Mot",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.650002,
-      lat: 10.96667,
-    },
-  },
-  {
     id: 1565033,
     name: "Tỉnh Thừa Thiên-Huế",
     state: "",
@@ -272,56 +180,6 @@ const ListCity = [
     },
   },
   {
-    id: 1565088,
-    name: "Tỉnh Kon Tum",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.916672,
-      lat: 14.75,
-    },
-  },
-  {
-    id: 1565593,
-    name: "Thông Tây Hội",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.650002,
-      lat: 10.83333,
-    },
-  },
-  {
-    id: 1565654,
-    name: "Thôn Ðiền Hạ",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.183327,
-      lat: 12.25,
-    },
-  },
-  {
-    id: 1565681,
-    name: "Thôn Chiết Bi Ha",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.716667,
-      lat: 16.4,
-    },
-  },
-  {
-    id: 1566053,
-    name: "Huyen Thanh Son",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.186142,
-      lat: 21.219879,
-    },
-  },
-  {
     id: 1566083,
     name: "Thanh pho Ho Chi Minh",
     state: "",
@@ -329,16 +187,6 @@ const ListCity = [
     coord: {
       lon: 106.666672,
       lat: 10.75,
-    },
-  },
-  {
-    id: 1566165,
-    name: "Tỉnh Thanh Hóa",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.5,
-      lat: 20.0,
     },
   },
   {
@@ -362,16 +210,6 @@ const ListCity = [
     },
   },
   {
-    id: 1566338,
-    name: "Tỉnh Thái Bình",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.333328,
-      lat: 20.5,
-    },
-  },
-  {
     id: 1566346,
     name: "Thai Binh",
     state: "",
@@ -382,16 +220,6 @@ const ListCity = [
     },
   },
   {
-    id: 1566557,
-    name: "Tỉnh Tây Ninh",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.166672,
-      lat: 11.33333,
-    },
-  },
-  {
     id: 1566559,
     name: "Tay Ninh",
     state: "",
@@ -399,46 +227,6 @@ const ListCity = [
     coord: {
       lon: 106.099998,
       lat: 11.3,
-    },
-  },
-  {
-    id: 1567069,
-    name: "Tan An",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.416672,
-      lat: 10.53333,
-    },
-  },
-  {
-    id: 1567148,
-    name: "Tam Ky",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.48333,
-      lat: 15.56667,
-    },
-  },
-  {
-    id: 1567621,
-    name: "Son Tay",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.504997,
-      lat: 21.137779,
-    },
-  },
-  {
-    id: 1567643,
-    name: "Tỉnh Sơn La",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 104.0,
-      lat: 21.16667,
     },
   },
   {
@@ -462,16 +250,6 @@ const ListCity = [
     },
   },
   {
-    id: 1567723,
-    name: "Song Cau",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.216667,
-      lat: 13.45,
-    },
-  },
-  {
     id: 1567788,
     name: "Soc Trang",
     state: "",
@@ -492,56 +270,6 @@ const ListCity = [
     },
   },
   {
-    id: 1568212,
-    name: "Sa Dec",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.76667,
-      lat: 10.3,
-    },
-  },
-  {
-    id: 1568510,
-    name: "Rach Gia",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.083328,
-      lat: 10.01667,
-    },
-  },
-  {
-    id: 1568574,
-    name: "Quy Nhon",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.23333,
-      lat: 13.76667,
-    },
-  },
-  {
-    id: 1568733,
-    name: "Tỉnh Quảng Trị",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.0,
-      lat: 16.75,
-    },
-  },
-  {
-    id: 1568738,
-    name: "Quảng Trị",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.199997,
-      lat: 16.75,
-    },
-  },
-  {
     id: 1568758,
     name: "Tỉnh Quảng Ninh",
     state: "",
@@ -549,16 +277,6 @@ const ListCity = [
     coord: {
       lon: 107.333328,
       lat: 21.25,
-    },
-  },
-  {
-    id: 1568769,
-    name: "Tỉnh Quảng Ngãi",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.666672,
-      lat: 15.0,
     },
   },
   {
@@ -602,66 +320,6 @@ const ListCity = [
     },
   },
   {
-    id: 1569901,
-    name: "Thi xa Phu Tho",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.22702,
-      lat: 21.39883,
-    },
-  },
-  {
-    id: 1569973,
-    name: "Duong GJong",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 103.966667,
-      lat: 10.21667,
-    },
-  },
-  {
-    id: 1570449,
-    name: "Phu Ly",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.913887,
-      lat: 20.541109,
-    },
-  },
-  {
-    id: 1570549,
-    name: "Phu Khuong",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.133331,
-      lat: 11.28333,
-    },
-  },
-  {
-    id: 1570565,
-    name: "Phu Hưu",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.533333,
-      lat: 21.01667,
-    },
-  },
-  {
-    id: 1570815,
-    name: "Phong Tho",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 103.349998,
-      lat: 22.533331,
-    },
-  },
-  {
     id: 1571058,
     name: "Phan Thiet",
     state: "",
@@ -669,16 +327,6 @@ const ListCity = [
     coord: {
       lon: 108.099998,
       lat: 10.93333,
-    },
-  },
-  {
-    id: 1571067,
-    name: "Phan Rang-Thap Cham",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.98333,
-      lat: 11.56667,
     },
   },
   {
@@ -701,16 +349,7 @@ const ListCity = [
       lat: 12.25,
     },
   },
-  {
-    id: 1572461,
-    name: "Ngô Châu",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.099998,
-      lat: 13.45,
-    },
-  },
+  
   {
     id: 1572594,
     name: "Tỉnh Hòa Bình",
@@ -732,26 +371,6 @@ const ListCity = [
     },
   },
   {
-    id: 1574023,
-    name: "My Tho",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.349998,
-      lat: 10.35,
-    },
-  },
-  {
-    id: 1575627,
-    name: "Long Xuyen",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.416672,
-      lat: 10.38333,
-    },
-  },
-  {
     id: 1575788,
     name: "Tỉnh Long An",
     state: "",
@@ -759,36 +378,6 @@ const ListCity = [
     coord: {
       lon: 106.166672,
       lat: 10.66667,
-    },
-  },
-  {
-    id: 1575864,
-    name: "Lộc Ninh",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.599998,
-      lat: 11.85,
-    },
-  },
-  {
-    id: 1576303,
-    name: "Lao Cai",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 103.949997,
-      lat: 22.48333,
-    },
-  },
-  {
-    id: 1576632,
-    name: "Tỉnh Lạng Sơn",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.5,
-      lat: 21.75,
     },
   },
   {
@@ -809,26 +398,6 @@ const ListCity = [
     coord: {
       lon: 108.333328,
       lat: 11.5,
-    },
-  },
-  {
-    id: 1577995,
-    name: "Lagi",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.783333,
-      lat: 10.66667,
-    },
-  },
-  {
-    id: 1578500,
-    name: "Kon Tum",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.0,
-      lat: 14.35,
     },
   },
   {
@@ -922,16 +491,6 @@ const ListCity = [
     },
   },
   {
-    id: 1581019,
-    name: "Tỉnh Hà Tây",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.666672,
-      lat: 20.83333,
-    },
-  },
-  {
     id: 1581021,
     name: "Hậu Dương",
     state: "",
@@ -959,26 +518,6 @@ const ListCity = [
     coord: {
       lon: 105.900002,
       lat: 18.33333,
-    },
-  },
-  {
-    id: 1581052,
-    name: "Ha Tien",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 104.48333,
-      lat: 10.38333,
-    },
-  },
-  {
-    id: 1581088,
-    name: "Tỉnh Gia Lai",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.25,
-      lat: 13.75,
     },
   },
   {
@@ -1012,16 +551,6 @@ const ListCity = [
     },
   },
   {
-    id: 1581297,
-    name: "Thành Phố Hải Phòng",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.583328,
-      lat: 20.83333,
-    },
-  },
-  {
     id: 1581298,
     name: "Haiphong",
     state: "",
@@ -1029,16 +558,6 @@ const ListCity = [
     coord: {
       lon: 106.68222,
       lat: 20.85611,
-    },
-  },
-  {
-    id: 1581323,
-    name: "Hai Ha",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.23333,
-      lat: 20.616671,
     },
   },
   {
@@ -1062,36 +581,6 @@ const ListCity = [
     },
   },
   {
-    id: 1581364,
-    name: "Ha Dong",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.777222,
-      lat: 20.9725,
-    },
-  },
-  {
-    id: 1581882,
-    name: "Tỉnh Bình Thuận",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.0,
-      lat: 11.08333,
-    },
-  },
-  {
-    id: 1582436,
-    name: "Dong Xoai",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.916672,
-      lat: 11.53333,
-    },
-  },
-  {
     id: 1582562,
     name: "Tỉnh Ðồng Tháp",
     state: "",
@@ -1109,56 +598,6 @@ const ListCity = [
     coord: {
       lon: 107.166672,
       lat: 11.0,
-    },
-  },
-  {
-    id: 1582886,
-    name: "Dong Hoi",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.599998,
-      lat: 17.48333,
-    },
-  },
-  {
-    id: 1582926,
-    name: "Dong Ha",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.100311,
-      lat: 16.81625,
-    },
-  },
-  {
-    id: 1583240,
-    name: "Huyen Doan Hung",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.185883,
-      lat: 21.6241,
-    },
-  },
-  {
-    id: 1583477,
-    name: "Dien Bien Phu",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 103.01667,
-      lat: 21.383329,
-    },
-  },
-  {
-    id: 1583992,
-    name: "Turan",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.220833,
-      lat: 16.06778,
     },
   },
   {
@@ -1192,56 +631,6 @@ const ListCity = [
     },
   },
   {
-    id: 1584661,
-    name: "Cu Chi",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.466667,
-      lat: 10.96667,
-    },
-  },
-  {
-    id: 1584807,
-    name: "Con Son",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.616669,
-      lat: 8.68333,
-    },
-  },
-  {
-    id: 1585660,
-    name: "Chau Doc",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.116669,
-      lat: 10.7,
-    },
-  },
-  {
-    id: 1586151,
-    name: "Cao Lanh",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.633331,
-      lat: 10.45,
-    },
-  },
-  {
-    id: 1586182,
-    name: "Tỉnh Cao Bằng",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.0,
-      lat: 22.66667,
-    },
-  },
-  {
     id: 1586185,
     name: "Cao Bang",
     state: "",
@@ -1262,16 +651,6 @@ const ListCity = [
     },
   },
   {
-    id: 1586288,
-    name: "Can Gio",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.966667,
-      lat: 10.41667,
-    },
-  },
-  {
     id: 1586296,
     name: "Can Duoc",
     state: "",
@@ -1279,26 +658,6 @@ const ListCity = [
     coord: {
       lon: 106.666672,
       lat: 10.61667,
-    },
-  },
-  {
-    id: 1586350,
-    name: "Cam Ranh",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.159126,
-      lat: 11.92144,
-    },
-  },
-  {
-    id: 1586357,
-    name: "Cam Pha Mines",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 107.300003,
-      lat: 21.01667,
     },
   },
   {
@@ -1329,26 +688,6 @@ const ListCity = [
     coord: {
       lon: 109.0,
       lat: 14.16667,
-    },
-  },
-  {
-    id: 1587919,
-    name: "Bim Son",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 105.860283,
-      lat: 20.07806,
-    },
-  },
-  {
-    id: 1587923,
-    name: "Bien Hoa",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 106.816673,
-      lat: 10.95,
     },
   },
   {
@@ -1409,26 +748,6 @@ const ListCity = [
     coord: {
       lon: 105.833328,
       lat: 22.133329,
-    },
-  },
-  {
-    id: 1591793,
-    name: "Ấp Vạn Tự Tây",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 109.099998,
-      lat: 12.15,
-    },
-  },
-  {
-    id: 1594018,
-    name: "Ấp Ba",
-    state: "",
-    country: "VN",
-    coord: {
-      lon: 108.212502,
-      lat: 16.04056,
     },
   },
   {
