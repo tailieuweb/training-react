@@ -114,11 +114,7 @@ const MainContent = () => {
   return (
     <div className="MainContent">
       <Link to="/list">
-        <img
-          alt="next"
-          className="toListItem"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Font_Awesome_5_solid_list.svg/1024px-Font_Awesome_5_solid_list.svg.png"
-        />
+        <i class="fa fa-list" aria-hidden="true"></i>
       </Link>
 
       <Card curCat={curCat}></Card>

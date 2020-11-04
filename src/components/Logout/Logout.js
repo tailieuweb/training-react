@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-
+import "./Logout.scss";
 function Logout() {
   const history = useHistory();
-  
+
   function handleClick() {
     localStorage.removeItem("accessToken");
     localStorage.removeItem("refreshToken");
@@ -20,14 +20,7 @@ function Logout() {
           color: `#000`,
         }}
       >
-        <img
-          src="https://cdn1.iconfinder.com/data/icons/essentials-pack/96/logout_close_sign_out_exit_access-512.png"
-          alt="logout"
-          style={{
-            width: `15px`,
-            marginRight: `10px`,
-          }}
-        />
+        <i className="fa fa-sign-out" aria-hidden="true"></i>
         Logout
       </button>
     </div>
