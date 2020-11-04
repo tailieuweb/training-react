@@ -108,14 +108,14 @@ const MainItem = () => {
       </div>
 
       <Link to="/">
-        <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+        <i className="fa fa-user-circle-o toListItem" aria-hidden="true"></i>
       </Link>
       <div className="d-flex">
         <button className="btn btn-primary mx-2" onClick={prevPage}>
-          {"<"}
+          <i className="fa fa-angle-left" aria-hidden="true"></i>
         </button>
         <button className="btn btn-primary mx-2" onClick={nextPage}>
-          {">"}
+          <i className="fa fa-angle-right" aria-hidden="true"></i>
         </button>
       </div>
     </div>
