@@ -1,0 +1,194 @@
+$blue-footer: 	rgb(3, 196, 235);
+$white-footer: #fff;
+.footer-forall {
+    $range-footer: 20px;
+
+    padding-top: $range-footer;
+    background:	rgb(3, 196, 235);
+    color: $white-footer;
+    .footer-forallcopy {
+        text-align: center;
+        padding: $range-footer 0;
+        background: $blue-footer;
+        color: $white-footer;
+    }
+    .app-footer {
+        font-size: $range-footer + 10px;
+        padding-top: $range-footer - 10px;
+        position: relative;
+        img{
+            width: 10%;
+        }
+    }
+    .app-footer::before {
+        position: absolute;
+        content: '';
+        left: calc(10% + 15px);
+        top: 60%;
+        width: 90%;
+        border: 1px solid $white-footer;
+    }
+}
+//hinh anh logo 
+.img-responsive{
+    width: 200%;
+    // height: 200%;
+}
+// Variable
+$range-rowfooter: 10px;
+//submit
+.submit{
+
+    background-color: #39806d ;
+    border-radius: 20%;
+    color: #fff;
+    border: none;
+    transition: all .6s;
+    font-size: 12px;
+    
+}
+.submit:hover{
+    // dong khi re chuot
+    letter-spacing: 1.7px;
+    background:purple;
+    //
+
+}
+.col-footer-padding {
+    padding-top: $range-rowfooter;
+}
+.btn-submitfooter .button-sb{
+    background-color:#fff;
+}
+.footer-fa i{
+    background: $white-footer;
+    border-radius: 30%;
+    color: $blue-footer;
+    padding: $range-rowfooter;
+    margin-right: $range-rowfooter;
+}
+.footer-fa .fa-footer{
+    background: $white-footer;
+    padding: $range-rowfooter 12px;
+}
+.footer-fa i:hover {
+    background: $blue-footer;
+    color: $white-footer;
+}
+.form-filed {
+    margin-top: 15px;
+    .input-icon i {
+        position: absolute;
+        opacity: .4;
+      }
+      .input-icon .icon {
+        padding-top: 5px;
+      }
+      .input-icon input[type="email"] {
+        font-family: FontAwesome;
+        font-size: 14px;
+        vertical-align: middle;
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(129,129,129,0.35);
+        padding-left: 20px;
+        padding-bottom: 8px;
+        box-shadow: none;
+        max-width: 200px;
+        width: 100%;
+        outline: none;
+        float: left;
+        color: white;
+        margin-right: -60px;
+
+      }
+      input[type="submit"] {
+        float: left;
+        font-size: 14px;
+        padding: 20px;
+        background: #000000;
+        padding: 5px;
+        color: $white-footer;
+        border: none;
+
+      }
+  }
+   // Variable
+   $border-screen: 1px solid #fff;
+
+  @media screen and (min-width: 992px) and (max-width: 1200px) 
+  {
+    .btn-submitfooter{
+        float: right;
+      }
+    .form-filed .input-icon input[type="email"] {
+        max-width: 150px;
+      }
+  }
+  @media screen and (min-width: 768px) and (max-width: 991px) 
+  {
+    .newletter{
+        position: relative;
+    }
+    .newletter::before {
+        position: absolute;
+        content: '';
+        top: -30%;
+        border-top: $border-screen;
+        width: 100%;
+    }
+    .app-footer img{
+        width: 13% !important;
+    }
+    .form-filed .input-icon input[type="email"] {
+        max-width: 200px;
+      }
+      .footer-forall .app-footer::before {
+        position: absolute;
+        content: '';
+        left: calc(10% + 40px);
+        top: 60%;
+        width: 90%;
+        border: 1px solid #fff;
+    }
+  }
+  @media screen and (max-width: 767px)
+  {
+      .ourstories {
+        position: relative;
+      }
+      .ourstories::before {
+        position: absolute;
+        content: '';
+        bottom: -30%;
+        border-top: $border-screen;
+        width: 100%;
+    }
+    .footer-fa4 {
+        position: relative;
+    }
+    .footer-fa4::before {
+        position: absolute;
+        content: '';
+        bottom: -30%;
+        border-top: $border-screen;
+        width: 100%;
+    }
+    .col-img-footer img{
+        margin: 0 auto;
+    }
+    .app-footer img{
+        width: 15% !important;
+    }
+    .form-filed .input-icon input[type="email"] {
+        max-width: 250px;
+      }
+      .footer-forall .app-footer::before {
+        position: absolute;
+        content: '';
+        left: calc(10% + 45px);
+        top: 60%;
+        width: 90%;
+        border: 1px solid #fff;
+    }
+  }
