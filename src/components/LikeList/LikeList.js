@@ -62,11 +62,10 @@ function LikeList() {
                 className="btn btn-link btnLikeList"
                 onClick={() => deleteLike(like.id)}
               >
-                <img
-                  src="https://icon-library.com/images/icon-delete/icon-delete-16.jpg"
-                  alt="delete"
-                  className="iconBtnLikeList"
-                />
+                <i
+                  className="fa fa-trash iconBtnLikeList"
+                  aria-hidden="true"
+                ></i>
               </button>
               <button
                 className="btn btn-link btnLikeList"
