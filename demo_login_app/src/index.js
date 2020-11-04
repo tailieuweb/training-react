@@ -41,7 +41,7 @@ ReactDOM.render(
       <Header />
       <Switch>
       <Route exact path="/home" component={()=>(<Auth><Home/></Auth>)}/>
-        <Route path='/' component={()=>(<Login/>)}/>
+        <Route path='/login' component={()=>(<Login/>)}/>
       </Switch>
     </Router>
     <Footer />

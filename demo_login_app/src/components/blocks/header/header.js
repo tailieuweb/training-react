@@ -44,7 +44,7 @@ class Header extends React.Component {
       <div className="Header">
         {/* <Link to="/about">About</Link> */}
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="nav-link" to="/home">SHOPTEEN</Link>
+          <Link className="nav-link" to="/home">FLYMPHIIM</Link>
           {/* <a className="navbar-brand" href="#">Navbar</a> */}
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -59,7 +59,7 @@ class Header extends React.Component {
               </li>
             </ul>
             <form className="form-inline my-2 my-lg-0">
-              <input className="form-control mr-sm-2" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search" />
+              <input className="form-control mr-sm-2" type="search" placeholder="Tìm kiếm phim" aria-label="Search" />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
