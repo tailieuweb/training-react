@@ -232,11 +232,11 @@ class App extends Component {
     if(items.length === 0) {
       return <Item item={0} />
     }
-    const currentPage = this.state.currentPage;
-    const newsPerPage = this.state.newsPerPage;
-    const indexOfLastNews = currentPage * newsPerPage;
-    const indexOfFirstNews = indexOfLastNews - newsPerPage;
-    const currentTodos = items.slice(indexOfFirstNews, indexOfLastNews);
+    const currentPage = this.state.currentPage; //Trang hiện tại
+    const newsPerPage = this.state.newsPerPage; //Tin tức mỗi trang
+    const indexOfLastNews = currentPage * newsPerPage; //index(vị trí) tin tức cuối cùng của trang hiện tại trong mảng dữ liệu items
+    const indexOfFirstNews = indexOfLastNews - newsPerPage; //index(vị trí) tin tức đầu tiên của trang hiện tại trong mảng dữ liệu items
+    const currentTodos = items.slice(indexOfFirstNews, indexOfLastNews); //"Cắt" dữ liệu ban đầu, lấy ra 1 mảng dữ liệu mới cho trang hiện tại
     return currentTodos.map((item, index) => {
       if(item.id === idEdit) {
         return (
@@ -256,8 +256,8 @@ class App extends Component {
       }
       return (
         <Item 
-          stt={index + 1 + (currentPage - 1)*newsPerPage} key={index} data={item}
-          index={index+1} 
+          index={index + 1 + (currentPage - 1)*newsPerPage} key={index} data={item}
+          //index={index+1} 
           item={item} 
           key={item.id} 
           handleShowAlert={this.handleShowAlert} 
