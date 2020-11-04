@@ -96,13 +96,13 @@ function SuperLikeList() {
                   </DialogActions>
                 </Dialog>
                 <button className="btn-icon" onClick={() => moveUp(spLike.id)}>
-                  <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                  <i className="fa fa-arrow-up" aria-hidden="true"></i>
                 </button>
                 <button
                   className="btn-icon"
                   onClick={() => moveDown(spLike.id)}
                 >
-                  <i className="fa fa-chevron-down" aria-hidden="true"></i>
+                  <i className="fa fa-arrow-down" aria-hidden="true"></i>
                 </button>
               </Col>
             </Row>

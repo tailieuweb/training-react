@@ -114,7 +114,7 @@ const MainContent = () => {
   return (
     <div className="MainContent">
       <Link to="/list">
-        <i class="fa fa-list" aria-hidden="true"></i>
+        <i className="fa fa-list" aria-hidden="true"></i>
       </Link>
 
       <Card curCat={curCat}></Card>
