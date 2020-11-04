@@ -72,7 +72,7 @@ function SuperLikeList() {
               </Col>
               <Col md={6}>
                 <button onClick={() => handleClickOpen()} className="btn-icon">
-                  <i class="fa fa-comment" aria-hidden="true"></i>
+                  <i className="fa fa-comment" aria-hidden="true"></i>
                 </button>
                 <Dialog
                   open={isOpen}
@@ -96,21 +96,13 @@ function SuperLikeList() {
                   </DialogActions>
                 </Dialog>
                 <button className="btn-icon" onClick={() => moveUp(spLike.id)}>
-                  <img
-                    src="https://st2.depositphotos.com/5266903/8456/v/950/depositphotos_84568954-stock-illustration-arrow-up-flat-red-color.jpg"
-                    className="img-icon"
-                    alt="moveup"
-                  />
+                  <i class="fa fa-chevron-up" aria-hidden="true"></i>
                 </button>
                 <button
                   className="btn-icon"
                   onClick={() => moveDown(spLike.id)}
                 >
-                  <img
-                    src="https://st2.depositphotos.com/5266903/8456/v/950/depositphotos_84568938-stock-illustration-arrow-down-flat-red-color.jpg"
-                    className="img-icon"
-                    alt="movedown"
-                  />
+                  <i className="fa fa-chevron-down" aria-hidden="true"></i>
                 </button>
               </Col>
             </Row>
