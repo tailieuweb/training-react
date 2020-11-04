@@ -72,11 +72,7 @@ function SuperLikeList() {
               </Col>
               <Col md={6}>
                 <button onClick={() => handleClickOpen()} className="btn-icon">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_WGi9IBAs_4ZxNJ7mYLfGKae0VnP5f6eDsg&usqp=CAU"
-                    className="img-icon"
-                    alt="messages"
-                  />
+                  <i class="fa fa-comment" aria-hidden="true"></i>
                 </button>
                 <Dialog
                   open={isOpen}
