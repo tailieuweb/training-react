@@ -2,18 +2,14 @@ import styled from 'styled-components';
 import device from './Device';
 
 const Text = styled.span`
-  color: ${({ color }) => color || '#FFFFFF'};
+  color: #FFFFFF;
   display: block;
-  font-size: ${({ fontSize }) => fontSize || '12px'};
-  text-align: ${({ align }) => align || 'left'};
+  font-size: 12px;
+  text-align: left;
 
-  ${({ firstToUpperCase }) =>
-    firstToUpperCase &&
-    `
   &:first-letter {
     text-transform: uppercase;
   }
-  `}
   @media ${device.tablet} {
     font-size: ${({ fontSize }) => fontSize || '12px'};
   }
