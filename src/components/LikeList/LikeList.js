@@ -17,7 +17,7 @@ function LikeList() {
     const tempLikeList = [...likeList];
     tempLikeList.splice(index, 1);
     setLikelist(tempLikeList);
-  }
+  };
 
   const moveUp = (id) => {
     const findItem = likeList.find((item) => item.id === id);
@@ -58,7 +58,10 @@ function LikeList() {
               </div>
             </div>
             <div className="col-md-6">
-              <button className="btn btn-link btnLikeList" onClick={() => deleteLike(like.id)}>
+              <button
+                className="btn btn-link btnLikeList"
+                onClick={() => deleteLike(like.id)}
+              >
                 <img
                   src="https://icon-library.com/images/icon-delete/icon-delete-16.jpg"
                   alt="delete"
@@ -69,21 +72,19 @@ function LikeList() {
                 className="btn btn-link btnLikeList"
                 onClick={() => moveUp(like.id)}
               >
-                <img
-                  src="https://st2.depositphotos.com/5266903/8456/v/950/depositphotos_84568954-stock-illustration-arrow-up-flat-red-color.jpg"
-                  alt="up"
-                  className="iconBtnLikeList"
-                />
+                <i
+                  className="fa fa-chevron-up iconBtnLikeList"
+                  aria-hidden="true"
+                ></i>
               </button>
               <button
                 className="btn btn-link btnLikeList"
                 onClick={() => moveDown(like.id)}
               >
-                <img
-                  src="https://st2.depositphotos.com/5266903/8456/v/950/depositphotos_84568938-stock-illustration-arrow-down-flat-red-color.jpg"
-                  alt="down"
-                  className="iconBtnLikeList"
-                />
+                <i
+                  className="fa fa-chevron-down iconBtnLikeList"
+                  aria-hidden="true"
+                ></i>
               </button>
             </div>
           </div>
