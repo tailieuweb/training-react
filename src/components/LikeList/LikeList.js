@@ -72,7 +72,7 @@ function LikeList() {
                 onClick={() => moveUp(like.id)}
               >
                 <i
-                  className="fa fa-chevron-up iconBtnLikeList"
+                  className="fa fa-arrow-up iconBtnLikeList"
                   aria-hidden="true"
                 ></i>
               </button>
@@ -81,7 +81,7 @@ function LikeList() {
                 onClick={() => moveDown(like.id)}
               >
                 <i
-                  className="fa fa-chevron-down iconBtnLikeList"
+                  className="fa fa-arrow-down iconBtnLikeList"
                   aria-hidden="true"
                 ></i>
               </button>
