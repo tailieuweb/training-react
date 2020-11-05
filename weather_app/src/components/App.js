@@ -110,7 +110,7 @@ class App extends React.Component {
         }`;
         const sunset = new Date(data1.sys.sunset * 1000).toLocaleTimeString().slice(0, 5);
         const sunrise = new Date(data1.sys.sunrise * 1000).toLocaleTimeString().slice(0, 5);
-
+        console.log('test');
         const weatherInfo = {
           city: data1.name,
           country: data1.sys.country,
