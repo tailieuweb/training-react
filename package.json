@@ -2,7 +2,7 @@
   "name": "tinderdog-3-finished-tinder-shop-flower",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:9000",
+  "proxy": "https://arcane-fjord-58924.herokuapp.com",
   "main":"server.js",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
