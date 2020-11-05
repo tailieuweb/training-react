@@ -1,0 +1,36 @@
+[
+    {
+        "id":1,
+        "name":"Huỳnh Quốc Thanh",
+        "permission": "1",
+        "phone": "0834177401"
+    },
+
+    {
+        "id":2,
+        "name":"Trần Văn A",
+        "permission": "2",
+        "phone": "111111111"
+    },
+
+    {
+        "id":3,
+        "name":"Phạm Đình Trọng",
+        "permission": "3",
+        "phone": "222222222"
+    },
+
+    {
+        "id":4,
+        "name":"Cố Văn",
+        "permission": "2",
+        "phone": "33333333"
+    },
+
+    {
+        "id":5,
+        "name":"Huỳnh Quốc Khánh",
+        "permission": "1",
+        "phone": "44444444"
+    }
+]
