@@ -60,16 +60,22 @@ $max-height: 100%;
 }
 // Color and background for selected text
 ::-moz-selection {
-  /* Code for Firefox */
   @include color(1);
-  background: transparent;
+  background: transparent !important;
 }
 ::selection {
-  background: transparent;
+  background: transparent !important;
   @include color(1);
 }
 //Index.js
 * {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Edge, Opera and Firefox */
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -115,11 +121,6 @@ $max-height: 100%;
   height: calc(100vh - 64px);
   width: 100%;
   position: relative;
-  .windy-map {
-    margin-top: 30px;
-    padding: 30px 0px;
-    width: 100%;
-  }
 }
 
 // Header.js
@@ -159,7 +160,7 @@ header {
       .time,
       .date {
         font-weight: 500;
-        font-size: $fSize - 4;
+        font-size: $fSize - 8;
         line-height: $lineHeight - 8;
       }
     }
@@ -226,6 +227,9 @@ header {
   @media (max-width: $mobile) {
     .search-bar {
       max-width: 300px;
+    }
+    .search-input {
+      padding: 11px 20px 11px 40px;
     }
   }
 }
@@ -343,14 +347,17 @@ header {
       }
     }
   }
-  @media screen and (max-width: $mobile) {
+  @media (max-width: $mobile) {
     margin-top: 20px;
-    .big-label {
-      font-size: 27px;
+    .wrapper {
+      .big-label {
+        font-size: 27px;
+      }
+      .small-label {
+        font-size: 16px;
+      }
     }
-    .small-label {
-      font-size: 14px;
-    }
+
     .current-weather {
       flex-basis: 100%;
       padding-right: 10px;
@@ -413,6 +420,9 @@ footer {
       padding: 0;
     }
   }
+  @media (max-width: $tableL) {
+    margin-top: 30px;
+  }
 }
 
 //ListCountry.js
@@ -458,13 +468,13 @@ footer {
       @include bg-color(1);
       cursor: pointer;
       .ico {
-        margin-left:10px;
+        margin-left: 10px;
         font-size: 12px;
       }
       th {
         @include bg-color(1);
-        position:sticky;
-        top:0;
+        position: sticky;
+        top: 0;
         padding: 10px;
       }
       th:hover {
@@ -479,6 +489,19 @@ footer {
       transition: all 0.2s ease-out;
       &:hover {
         @include bg-hover(0.9);
+      }
+    }
+  }
+  @media (max-width: $mobile) {
+    thead {
+      font-size: 13px;
+      .ico {
+        display: none;
+      }
+    }
+    tbody {
+      tr {
+        font-size: 14px;
       }
     }
   }
@@ -515,9 +538,30 @@ footer {
 
 // WeatherMap.js
 .windy-map {
+  margin-bottom: 30px;
+  h2 {
+    text-transform: uppercase;
+    font-size: 50px;
+  }
+  hr {
+    margin: 10px 0px;
+    padding: 0;
+    height: 10px;
+    @include bg-color(1);
+    border: 1px $color solid;
+    border-radius: 5px;
+  }
   .border {
     @include bg-color(1);
     border: solid $background 1px;
     height: 500px;
+  }
+  @media (max-width: $mobile) {
+    h2 {
+      font-size: 38px;
+    }
+    .border{
+      height:300px;
+    }
   }
 }
