@@ -364,9 +364,9 @@ export default class App extends React.Component {
     return (
       <React.Fragment>
         <div className="weather-main">
-          {/* Header page */}
+          {/* Trang Header */}
           <Header />
-          {/* Main page */}
+          {/* Trang chủ */}
           <div className="container-fluid">
             <SearchCity
               handleGetLocation={this.handleGetLocation}
@@ -402,7 +402,7 @@ export default class App extends React.Component {
               </div>
             )}
           </div>
-          {/* Footer page */}
+          {/* Trang footer */}
           <Footer />
         </div>
       </React.Fragment>
