@@ -1,72 +1,9 @@
+// Bảng chứa thông tin thời tiết của một số các thành phố, tỉnh thành lớn trên cả nước, đồng thời cho phép sắp xếp thời tiết theo các tiêu chí được định nghĩa sẵn
 import React from "react";
-import styled from "styled-components";
 import "../fontawesome/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import device from "./Device";
+import '../scss/Style.scss'
 
-const Table = styled.table`
-  font-size: 16px;
-  color: #fff;
-  width: 100%;
-  .temp,
-  .hum {
-    text-align: center;
-  }
-  thead {
-    position: sticky;
-    top: 0;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
-    background-color: green;
-    cursor: pointer;
-    .ico {
-      display: block;
-      font-size: 12px;
-    }
-    td {
-      padding: 5px;
-    }
-    td:hover {
-      background-color: #00000040;
-    }
-  }
-  tbody {
-    font-size: 16px;
-  }
-  tbody tr{
-    cursor: pointer;
-    transition:all .2s ease-out;
-    &:hover{
-      background-color: #ffffff50;
-    }
-  }
-  @media ${device.desktop} {
-    font-size: 12px;
-  }
-`;
-
-const StyleList = styled.div`
-  height: 420px;
-  overflow-y: scroll;
-  ::-webkit-scrollbar {
-    width: 10px;
-  }
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    transition: all 1s ease-out;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: green;
-  }
-  background-color: #00000050;
-  .sort {
-    padding: 10px 0px 20px;
-  }
-`;
 
 const keys = {
   city: "city",
@@ -84,6 +21,7 @@ class ListCountry extends React.Component {
     };
     this.sortList = this.sortList.bind(this);
   }
+  // Hàm sắp xếp thông tin theo thể loại (tên, độ ẩm, nhiệt độ)
   sortList = (arr, key, up) => {
     arr.sort((a, b) => {
       if (a[key] > b[key]) {
@@ -94,6 +32,7 @@ class ListCountry extends React.Component {
       }
       return 0;
     });
+    // Kiểm tra nếu như hàm đang giảm thì sẽ đảo ngược mảng để mảng chuyển về sắp xếp tăng dần
     if (!up) {
       arr.reverse();
     }
@@ -102,11 +41,12 @@ class ListCountry extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <StyleList>
-          <Table className="table table-borderless">
+        <div className="list-country">
+          <table className="table table-borderless">
             <thead>
               <tr>
-                <td
+                <th
+                  // Mỗi khi click vào đầu bảng sẽ sắp xếp thông tin theo kiểu được định nghĩa
                   onClick={() => {
                     this.setState(
                       {
@@ -128,8 +68,8 @@ class ListCountry extends React.Component {
                   <span className="ico">
                     <i className="fas fa-city"></i>
                   </span>
-                </td>
-                <td
+                </th>
+                <th
                   onClick={() => {
                     this.setState(
                       {
@@ -151,8 +91,8 @@ class ListCountry extends React.Component {
                   <span className="ico">
                     <i className="fas fa-temperature-low"></i>
                   </span>
-                </td>
-                <td
+                </th>
+                <th
                   onClick={() => {
                     this.setState(
                       {
@@ -174,10 +114,11 @@ class ListCountry extends React.Component {
                   <span className="ico">
                     <i className="fas fa-tint"></i>
                   </span>
-                </td>
+                </th>
               </tr>
             </thead>
             <tbody>
+              {/* Load giá trị trong mảng được truyển từ App.js */}
               {this.props.list.map((item, index) => (
                 <tr
                   key={index}
@@ -187,14 +128,15 @@ class ListCountry extends React.Component {
                 >
                   <td>{item.city}</td>
                   <td className="temp">
+                    {/* Chuyển đổi nhiệt độ qua độ C */}
                     {Math.floor(item.temp - 273.15)}&#176;C
                   </td>
                   <td className="hum">{item.humidity}%</td>
                 </tr>
               ))}
             </tbody>
-          </Table>
-        </StyleList>
+          </table>
+        </div>
       </React.Fragment>
     );
   }
