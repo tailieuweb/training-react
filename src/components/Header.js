@@ -1,32 +1,15 @@
+// Header trang web
 import React from 'react'
-import styled from 'styled-components'
 import CurrentTimeNew from './CurrentTimeNew'
-const HeadingHeader = styled.header`
-	text-align:center;
-	padding:10px 0px;
-	color:white;
-	a{
-		text-transform:uppercase;
-		font-size:40px;
-		font-weight:bold;
-		color:green;
-		text-decoration:none;
-	}
-	#current-time{
-		font-size:32px;
-		color:white;
-		text-transform:uppercase;
-	}
-`;
+import '../scss/Style.scss'
 
 const Header = () => {
 	return (
 		<React.Fragment>
-			<HeadingHeader>
+			<header>
 				<a href="/">Weather App</a>
-				{/* use hook */}
-				<CurrentTimeNew/>
-			</HeadingHeader>
+				<CurrentTimeNew />
+			</header>
 		</React.Fragment>
 	);
 }

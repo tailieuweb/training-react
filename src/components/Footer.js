@@ -1,25 +1,18 @@
-import React from 'react'
-import styled from 'styled-components';
+// Footer trang web
+import React from "react";
+import "../scss/Style.scss";
 
-const FooterStyle = styled.footer`
-    text-align:center;
-    position:relative;
-    bottom:0;
-    color:white;
-    padding:10px;
-    p{
-        margin:0;
-    }
-`;
 const Footer = () => {
-    return (
-        <>
-            <FooterStyle>
-                <p>Nhóm B</p>
-                <p>Demo ReactJS</p>
-            </FooterStyle>
-        </>
-    );
-}
+  return (
+    <React.Fragment>
+      <footer>
+        <div className="bg-footer">
+          <p>Nhóm B</p>
+          <p>Demo ReactJS</p>
+        </div>
+      </footer>
+    </React.Fragment>
+  );
+};
 
 export default Footer;
