@@ -217,7 +217,7 @@ export default class App extends React.Component {
         }
       }
     } else {
-      // Nếu trỉnh duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
+      // Nếu trình duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
       alert("Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!");
     }
   }
@@ -279,7 +279,6 @@ export default class App extends React.Component {
           error: false,
         });
       })
-      .then(() => {})
       .catch((error) => {
         this.setState({
           error: true,
@@ -288,7 +287,7 @@ export default class App extends React.Component {
       });
   };
 
-  // Truyển danh sách thông tin thời tiết của thành phố qua ListCity.js
+  // Truyền danh sách thông tin thời tiết của thành phố qua ListCity.js
   getLocalData = (city, array) => {
     const data = array.find((dt) => dt.city === city);
     this.setState({
