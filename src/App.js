@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SearchCity from "./components/SearchCity";
 import Result from "./components/Result";
 import NotFound from "./components/NotFound";
+import "animate.css/animate.min.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ListCountry from "./components/ListCountry";
@@ -79,7 +80,7 @@ export default class App extends React.Component {
   /* Hàm này sẽ thực hiện trước một lần duy nhất sau khi render
    Sử dụng để làm việc với ajax */
   componentDidMount() {
-    //Kiem tra xem trinh duyet ho tro localStorage hay khong!
+    //Kiểm tra xem trình duyệt có hỗ trợ localStorage hay không!
     if (typeof Storage !== "undefined") {
       const currentTime = new Date().getTime();
       storageTime = sessionStorage.getItem("time");
@@ -200,7 +201,7 @@ export default class App extends React.Component {
         }
       }
     } else {
-      // Nếu trỉnh duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
+      // Nếu trình duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
       alert("Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!");
     }
   }
@@ -271,7 +272,7 @@ export default class App extends React.Component {
       });
   };
 
-  // Truyển danh sách thông tin thời tiết của thành phố qua ListCity.js
+  // Truyền danh sách thông tin thời tiết của thành phố qua ListCity.js
   getLocalData = (city, array) => {
     const data = array.find((dt) => dt.city === city);
     this.setState({
@@ -312,22 +313,22 @@ export default class App extends React.Component {
         throw Error(res1.statusText);
       })
       .then(([data1]) => {
-        // Ngày thàng năm được trả về từ json
+        // Ngày tháng năm được trả về từ JSON
         const currentDate = new Date();
         const date = `${
           days[currentDate.getDay()]
         }, Ngày ${currentDate.getDate()}, ${
           months[currentDate.getMonth()]
         }, Năm ${currentDate.getFullYear()}`;
-        // Chuyển đổi thời gian mặt trời mọc
+        // Chuyển đổi thời gian Mặt Trời mọc
         const sunset = new Date(data1.sys.sunset * 1000)
           .toLocaleTimeString()
           .slice(0, 4);
-        // Chuyển đổi thời gian mặt trời lặn
+        // Chuyển đổi thời gian Mặt Trời lặn
         const sunrise = new Date(data1.sys.sunrise * 1000)
           .toLocaleTimeString()
           .slice(0, 4);
-        // Lấy các dữ liệu cần thiết được trả về từ json
+        // Lấy các dữ liệu cần thiết được trả về từ JSON
         weatherInfo = {
           city: data1.name,
           country: data1.sys.country,
@@ -382,7 +383,7 @@ export default class App extends React.Component {
                   getLocalData={this.getLocalData}
                 />
               </div>
-              <div className="col-lg-7 col-md-12">
+              <div className="col-lg-7 col-md-12 order-">
                 {/* Nếu như weatherInfo có dữ liệu thì sẽ Gọi component <Result/> */}
                 {weatherInfo && <Result weather={weatherInfo} />}
                 {/* Nếu như error==true sẽ gọi componenent <NotResult/> */}
@@ -391,10 +392,8 @@ export default class App extends React.Component {
             </div>
           </div>
           <div className="container">
-            
             {/* Windy map */}
             {weatherInfo && (
-              
               <div className="windy-map">
                 <WeatherMap
                   lat={this.state.weatherInfo.lat}
@@ -404,7 +403,6 @@ export default class App extends React.Component {
             )}
           </div>
           {/* Footer page */}
-          
           <Footer />
         </div>
       </React.Fragment>

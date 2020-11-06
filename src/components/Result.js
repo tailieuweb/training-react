@@ -142,5 +142,4 @@ Result.propTypes = {
   }).isRequired,
 };
 
-// export default React.memo(Result);
 export default Result;

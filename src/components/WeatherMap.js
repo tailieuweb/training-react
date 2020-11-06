@@ -1,4 +1,4 @@
-// Iframe của windymap cung cấp cho người dùng các tính năng rất hưu ích
+// Iframe của windymap cung cấp cho người dùng các tính năng rất hữu ích
 /*
 Một số tính năng như:
 - Xem được tổng quan thời tiết của quốc gia

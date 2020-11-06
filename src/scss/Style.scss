@@ -458,13 +458,13 @@ footer {
       @include bg-color(1);
       cursor: pointer;
       .ico {
-        margin-left: 10px;
+        margin-left:10px;
         font-size: 12px;
       }
       th {
         @include bg-color(1);
-        position: sticky;
-        top: 0;
+        position:sticky;
+        top:0;
         padding: 10px;
       }
       th:hover {

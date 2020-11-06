@@ -1,4 +1,4 @@
-// Khi kết quả tìm kiếm, hoặc có lỗi sảy ra thì component sẽ được gọi tại App.js
+// Khi kết quả tìm kiếm, hoặc có lỗi xảy ra thì component sẽ được gọi tại App.js
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faSadTear} from '@fortawesome/free-solid-svg-icons';

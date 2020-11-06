@@ -4,12 +4,12 @@ import "../fontawesome/css/all.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import '../scss/Style.scss'
 
-
 const keys = {
   city: "city",
   temp: "temp",
   hum: "humidity",
 };
+
 class ListCountry extends React.Component {
   constructor(props) {
     super(props);
@@ -118,7 +118,7 @@ class ListCountry extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {/* Load giá trị trong mảng được truyển từ App.js */}
+              {/* Load giá trị trong mảng được truyền từ App.js */}
               {this.props.list.map((item, index) => (
                 <tr
                   key={index}
