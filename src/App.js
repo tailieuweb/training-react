@@ -3,7 +3,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import SearchCity from "./components/SearchCity";
 import Result from "./components/Result";
 import NotFound from "./components/NotFound";
-import "animate.css/animate.min.css";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import ListCountry from "./components/ListCountry";
@@ -32,6 +31,7 @@ const months = [
   "Tháng 11",
   "Tháng 12",
 ];
+
 const days = [
   "Chủ nhật",
   "Thứ hai",
@@ -62,14 +62,34 @@ export default class App extends React.Component {
     this.handleGetLocation = this.handleGetLocation.bind(this);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.success = this.success.bind(this);
-
+    //Block view source
+    this.blockViewSource = this.blockViewSource.bind(this);
+    //Block copy text page
+    this.onCopy = this.onCopy.bind(this);
+    this.onPaste = this.onPaste.bind(this);
+    this.onCut = this.onCut.bind(this);
     /* Kiểm tra giá trị thời gian trong sessionStorage, nếu chưa có sẽ hiện đặt giá trị vào key "time" trong sessionStorage */
     storageTime = sessionStorage.getItem("time");
     if (storageTime === null) {
       storageTime = sessionStorage.setItem("time", new Date().getTime());
     }
   }
+  //Chặn phải chuột tại 
+  blockViewSource(e) {
+    e.preventDefault();
+    return false;
+  }
 
+  // Block copy text page
+  onCopy() {
+    return false;
+  }
+  onCut() {
+    return false;
+  }
+  onPaste() {
+    return false;
+  }
   // Hàm này sẽ đặt giá trị cho "value" khi nhận giá trị của input với mỗi thay đổi
   handleInputChange = (e) => {
     this.setState({
@@ -80,11 +100,10 @@ export default class App extends React.Component {
   /* Hàm này sẽ thực hiện trước một lần duy nhất sau khi render
    Sử dụng để làm việc với ajax */
   componentDidMount() {
-    //Kiểm tra xem trình duyệt có hỗ trợ localStorage hay không!
+    //Kiem tra xem trinh duyet ho tro localStorage hay khong!
     if (typeof Storage !== "undefined") {
       const currentTime = new Date().getTime();
       storageTime = sessionStorage.getItem("time");
-      console.log(storageTime);
       if (storageTime === undefined || storageTime === null) {
         sessionStorage.clear();
         storageTime = sessionStorage.getItem("time");
@@ -152,7 +171,6 @@ export default class App extends React.Component {
               });
             });
         });
-        console.log(this.state.arr);
       } else {
         // Thực hiện lấy thông tin thời tiết được lưu tại localStorage
         try {
@@ -189,19 +207,17 @@ export default class App extends React.Component {
               humidity: data1.main.humidity,
               wind: data1.wind.speed,
             };
-            console.log(weatherInfo);
             this.setState((prevState) => ({
               arr: [...prevState.arr, weatherInfo],
               error: false,
             }));
           }
-          console.log(this.state.arr);
         } catch (err) {
           localStorage.clear();
         }
       }
     } else {
-      // Nếu trình duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
+      // Nếu trỉnh duyệt của người dùng không hỗ trợ localStorage sẽ thông báo đến người dùng
       alert("Trình duyệt của bạn đã quá cũ. Hãy nâng cấp trình duyệt ngay!");
     }
   }
@@ -272,7 +288,7 @@ export default class App extends React.Component {
       });
   };
 
-  // Truyền danh sách thông tin thời tiết của thành phố qua ListCity.js
+  // Truyển danh sách thông tin thời tiết của thành phố qua ListCity.js
   getLocalData = (city, array) => {
     const data = array.find((dt) => dt.city === city);
     this.setState({
@@ -313,22 +329,22 @@ export default class App extends React.Component {
         throw Error(res1.statusText);
       })
       .then(([data1]) => {
-        // Ngày tháng năm được trả về từ JSON
+        // Ngày thàng năm được trả về từ json
         const currentDate = new Date();
         const date = `${
           days[currentDate.getDay()]
         }, Ngày ${currentDate.getDate()}, ${
           months[currentDate.getMonth()]
         }, Năm ${currentDate.getFullYear()}`;
-        // Chuyển đổi thời gian Mặt Trời mọc
+        // Chuyển đổi thời gian mặt trời mọc
         const sunset = new Date(data1.sys.sunset * 1000)
           .toLocaleTimeString()
           .slice(0, 4);
-        // Chuyển đổi thời gian Mặt Trời lặn
+        // Chuyển đổi thời gian mặt trời lặn
         const sunrise = new Date(data1.sys.sunrise * 1000)
           .toLocaleTimeString()
           .slice(0, 4);
-        // Lấy các dữ liệu cần thiết được trả về từ JSON
+        // Lấy các dữ liệu cần thiết được trả về từ json
         weatherInfo = {
           city: data1.name,
           country: data1.sys.country,
@@ -363,10 +379,16 @@ export default class App extends React.Component {
     const { value, weatherInfo, error } = this.state;
     return (
       <React.Fragment>
-        <div className="weather-main">
-          {/* Trang Header */}
+        <div
+          className="weather-main"
+          onCopy={this.onCopy}
+          onCut={this.onCut}
+          onPaste={this.onPaste}
+          onContextMenu={this.blockViewSource}
+        >
+          {/* Header page */}
           <Header />
-          {/* Trang chủ */}
+          {/* Main page */}
           <div className="container-fluid">
             <SearchCity
               handleGetLocation={this.handleGetLocation}
@@ -383,7 +405,7 @@ export default class App extends React.Component {
                   getLocalData={this.getLocalData}
                 />
               </div>
-              <div className="col-lg-7 col-md-12 order-">
+              <div className="col-lg-7 col-md-12">
                 {/* Nếu như weatherInfo có dữ liệu thì sẽ Gọi component <Result/> */}
                 {weatherInfo && <Result weather={weatherInfo} />}
                 {/* Nếu như error==true sẽ gọi componenent <NotResult/> */}
@@ -391,10 +413,11 @@ export default class App extends React.Component {
               </div>
             </div>
           </div>
-          <div className="container">
+          <div className="container" onContextMenu={this.blockViewSource}>
             {/* Windy map */}
             {weatherInfo && (
               <div className="windy-map">
+                <hr />
                 <WeatherMap
                   lat={this.state.weatherInfo.lat}
                   lon={this.state.weatherInfo.lon}
@@ -402,7 +425,7 @@ export default class App extends React.Component {
               </div>
             )}
           </div>
-          {/* Trang footer */}
+          {/* Footer page */}
           <Footer />
         </div>
       </React.Fragment>
