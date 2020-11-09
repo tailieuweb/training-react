@@ -11,7 +11,7 @@ const ForecastWrapper = styled.div`
   padding: 10px;
   margin: 0 5px;
   border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(14 14 14 / 20%);
   &:first-child {
     margin-left: 0;
   }

@@ -13,7 +13,7 @@ const AppTitle = styled.h1`
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 400;
-  color: #ffffff;
+  color: #272727;
   transition: 0.3s 1.4s;
   opacity: ${({ showLabel }) => (showLabel ? 1 : 0)};
 

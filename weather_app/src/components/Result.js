@@ -1,5 +1,5 @@
 import React from 'react';
-import './Result.sass';
+// import './Result.sass';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -59,7 +59,7 @@ const WeatherIcon = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 70px;
-  color: #ffffff;
+  color: #272727;
   @media ${device.tablet} {
     font-size: 100px;
     justify-content: flex-end;
@@ -78,7 +78,7 @@ const Temperature = styled.h3`
   display: block;
   font-size: 50px;
   font-weight: 400;
-  color: #ffffff;
+  color: #272727;
   @media ${device.tablet} {
     font-size: 70px;
   }
@@ -96,7 +96,7 @@ const WeatherDetailsWrapper = styled.div`
   flex-wrap: wrap;
   padding: 10px 0;
   margin: 20px 0;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgb(0 0 0 / 30%);
   border-radius: 10px;
   align-self: flex-start;
   @media ${device.mobileL} {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import device from '../responsive/Device';
 
 const BigLabel = styled.h2`
-  color: ${({ color }) => color || '#FFFFFF'};
+  color: #272727;
   display: block;
   font-weight: ${({ weight }) => weight || '600'};
   font-size: ${({ fontSize }) => fontSize || '30px'};
