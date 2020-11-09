@@ -6,7 +6,7 @@
     text-align: left;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.241), 0 6px 20px 0 rgba(0, 0, 0, 0.241);
     padding: 10px;
-    display: block;
+    display: inline-table;
 
     position: relative;
     cursor: pointer;
@@ -19,6 +19,10 @@
         top: 0px;
         right: -50%;
         cursor: pointer;
+        color: #000;
+        &:hover{
+            color:#514f4f;
+        }
       }    
     .Located{
         padding-left: 20px;
@@ -50,14 +54,18 @@
     }
     .container{
         height: 50%;
-        .Img-Gallery{
-            padding: 10px ;
+        .Img-Gallery {
+            padding: 10px;
             margin: 0 auto;
-            .Img-Gallery img{
-                border-radius: 5px;
-                margin: 10px 0;
+            display: inline-flex;
+            h4 {
+              margin: 0 auto;
             }
-        }
+            .Img-Gallery img {
+              border-radius: 5px;
+              margin: 10px 0;
+            }
+          }
     }
     
 
