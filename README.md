@@ -19,7 +19,7 @@ body: {
   "password": "1"
 }
 
-// Server will response accessToken & refreshToken for user jus login
+// Server will response accessToken & refreshToken for user just login
 Response: {
   "accessToken": "...token",
   "refreshToken": "...token"
