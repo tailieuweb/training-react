@@ -4,7 +4,6 @@ import Header from './Component/Header';
 import Search from './Component/Search';
 import TableData from './Component/TableData';
 import AddUser from './Component/AddUser';
-
 import dulieu from './Component/Data.json';
 import { v1 as uuidv1 } from 'uuid';
 uuidv1();
@@ -107,7 +106,12 @@ class App extends Component {
         ketqua.push(item);
       }
     })
-    // console.log(ketqua);
+    console.log(ketqua);
+
+    // let keySearh = this.state.SearchText;
+    // const ketqua = this.state.data.filter(function (el) {
+    //   return el.name.toLowerCase().indexOf(keySearh.toLowerCase()) > -1;
+    // });
     
     //Tìm kiếm End
     //Sửa Start

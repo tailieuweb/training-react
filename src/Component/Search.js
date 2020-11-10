@@ -19,6 +19,7 @@ class Search extends Component {
       tempValue: event.target.value
     })
     this.props.GiveDatas(this.state.tempValue)
+   //this.props.GiveDatas(event.target.value);
   }
 
   //Lấy dữ liệu gửi lên App
@@ -51,7 +52,7 @@ render    () {
               <div className="form-group">
                 <div className="btn-group">
                   <input type="text" className="form-control" onChange={(event)=>this.isChange(event)} placeholder="Nhập thông tim cần tìm..." />
-                  <button type="button" className="btn btn-success" onClick={(dulieu)=>this.props.GiveDatas(this.state.tempValue)}>Submit</button>
+                  <button type="button" className="btn btn-success" onClick={(dulieu)=>this.props.GiveDatas(this.state.tempValue)}>Search</button>
                 </div>
               </div>
             </div>
