@@ -7,12 +7,19 @@ export default function TaskDetail() {
     let { id } = useParams();
     const base_url = "http://localhost/todolistfinal/API/post/";
     const [listItem, setListItem] = useState([]);
+    const [nameTask, setnameTask] = useState([]);
     useEffect(() => {
         Axios.post(`${base_url}getTaskListById.php`, { idTask: id })
             .then(res => {
                 setListItem(res.data);
             }).catch(err => {
                 console.log(err);
+            })
+    }, []);
+    useEffect(() => {
+        Axios.post(`${base_url}getTaskById.php`, { idTask: id })
+            .then(res => {
+                setnameTask(res.data[0]['name_task']);
             })
     }, [])
     const handleAddItem = (e) => {
@@ -52,7 +59,7 @@ export default function TaskDetail() {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="detailNameTask">
-                                    <h4>Làm giao diện todoList</h4>
+                                    <h4>{nameTask}</h4>
                                     <Link to="/">
                                         <button className="btn btn-success btnback"> Quay lại </button>
                                     </Link>

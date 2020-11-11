@@ -92,7 +92,7 @@ export default class ContentMainItem extends Component {
                     <button className="btn btn-danger btnAction" onClick={this.props.showModal}>Xóa</button>
                     <button className="btn btn-success btnAction" onClick={this.editTask}>Sửa</button>
                     <Link to={"/detail/" + title + "/" + this.props.showLink}>
-                        <button className="btn btn-warning btnAction">...</button>
+                        <button className="btn btn-warning btnAction" tieude={this.props.tieude}>...</button>
                     </Link>
                 </td>
                 {

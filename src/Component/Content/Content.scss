@@ -81,19 +81,22 @@
         }
     }
 }
+$bg-color:red;
+$text-color:white;
 #closeSearchType{
     display: inline-block;
     padding: 3px 8px;
-    background-color: red;
-    color: white;  
+    background-color: $bg-color;
+    color: $text-color;  
     margin: 2px;
     border-radius: 3px;
     cursor: pointer;
 }
+$bg-colorDelete : white;
 .modalConfirmDelete{
     .modalConfirmMain{
         width: 500px;
-        background-color: white;
+        background-color: $bg-colorDelete;
         border-radius: 20px;
         position: relative;
         z-index: 1;
