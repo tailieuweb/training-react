@@ -1,0 +1,150 @@
+.pd-0{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.App{
+  text-align: center;
+
+  .panel.panel-success{
+    margin-top: 30px;
+    
+    .btn-edit{
+      margin-right: 10px;
+    }
+
+    .panel-heading{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2{
+        margin: 0 auto;
+      }
+
+      .dropdown-menu {
+        
+        li{
+
+          span{
+            display: block;
+            padding: 3px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 1.42857143;
+            color: #333;
+            white-space: nowrap;
+          }
+          span:hover{
+            background: #f5f5f5;
+          }
+        }
+      }
+
+      .btn-default{
+        background: #fff !important;
+      }
+    }
+  }
+
+  .form-add{
+    text-align: right;
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 6px 4px #ccc;
+    margin-top: 20px;
+
+    .btn-cancel{
+      margin-right: 20px;
+    }
+  }
+
+  .form-add::before{
+    content: '';
+    position: absolute;
+    top: -3px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg) translateX(-50%);
+    background: #fff;
+    box-shadow: -3px -3px 3px 2px #ccc;
+    left: 50%;
+  }
+
+ .box-ex{
+   text-align: right;
+    .example, .btn-logout{
+      font-size: 20px;
+    }
+    .btn-logout{
+      background: none;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .btn-logout:hover{
+      color: blue;
+    }
+ }
+}
+
+.main-example{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.8);
+  z-index: 10001;
+  
+  .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    h1{
+      margin: 0 auto;
+      color: yellow;
+    }
+
+    a{
+      color: #000;
+      background: #fff;
+      padding: 5px 15px;
+    }
+  }
+
+  .box-main{
+    padding: 10px;
+    background: #fff;
+
+    ul{
+      margin: 0;
+      padding: 0;
+
+      li{
+        list-style: none;
+        padding: 10px 0;
+        border: 1px solid #ccc;
+        margin-bottom: 5px;
+        
+        a{
+          text-decoration: none;
+          font-size: 18px;
+          color: #000;
+        }
+      }
+
+      li:hover{
+        background: #f5f5f5;
+        cursor: pointer;
+      }
+    }
+  }
+}
